@@ -25,5 +25,9 @@ private:
 	Input* input;
 	GameState* gameState;
 	AudioManager* audio;
+
+	sf::Text text;
+	sf::Text text2;
+	sf::Font font;
 };
 
