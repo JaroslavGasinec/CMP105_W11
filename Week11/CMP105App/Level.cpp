@@ -36,7 +36,7 @@ void Level::handleInput(float dt)
 	//2a
 	if (input->isKeyDown(sf::Keyboard::W)) {
 		input->setKeyUp(sf::Keyboard::W);
-		std::cout << "W is pressed" << std::endl;
+		gameState->setCurrentState(State::PAUSE);
 	}
 	//2b
 	if (input->isKeyDown(sf::Keyboard::J) && input->isKeyDown(sf::Keyboard::K) && input->isKeyDown(sf::Keyboard::L)) {
