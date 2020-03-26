@@ -23,6 +23,7 @@ Level::Level(sf::RenderWindow* hwnd, Input* in, GameState* gs, AudioManager* aud
 	circle.setPosition(0, 0);
 	circle.setRadius(30);
 	circle.setFillColor(sf::Color::Red);
+	
 }
 
 Level::~Level()
@@ -36,6 +37,7 @@ void Level::handleInput(float dt)
 	//2a
 	if (input->isKeyDown(sf::Keyboard::W)) {
 		input->setKeyUp(sf::Keyboard::W);
+		audio->stopAllMusic();
 		gameState->setCurrentState(State::PAUSE);
 	}
 	//2b
@@ -80,6 +82,7 @@ void Level::update(float dt)
 	distanceMouse = sqrt((difference.x * difference.x) + (difference.y * difference.y));
 	s = "distance: " + std::to_string(distanceMouse);
 	text2.setString(s);
+	
 }
 
 // Render level

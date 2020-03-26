@@ -8,6 +8,7 @@ Menu::Menu(sf::RenderWindow* hwnd, Input* in, GameState* gs, AudioManager* aud)
 	audio = aud;
 
 	// initialise game objects
+	audio->addSound("sfx/TP_Secret.ogg", "jingle");
 	font.loadFromFile("font/arial.ttf");
 	text.setFont(font);
 	text.setFillColor(sf::Color::White);
@@ -29,6 +30,8 @@ void Menu::handleInput(float dt)
 {
 	if (input->isKeyDown(sf::Keyboard::Space)) {
 		input->setKeyUp(sf::Keyboard::Space);
+		audio->playSoundbyName("jingle");
+		audio->playMusicbyName("cantina");
 		gameState->setCurrentState(State::LEVEL);
 	}
 }
