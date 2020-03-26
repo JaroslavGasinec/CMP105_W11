@@ -6,6 +6,7 @@
 #include "Framework/GameState.h"
 #include <string>
 #include <iostream>
+#include <cmath>
 
 class Level{
 public:
@@ -26,4 +27,12 @@ private:
 	Input* input;
 	GameState* gameState;
 	AudioManager* audio;
+	sf::CircleShape circle;
+	sf::Text text;
+	sf::Text text2;
+	sf::Font font;
+	sf::Vector2u initialMouse;
+	sf::Vector2u finalMouse;
+	double distanceMouse = 0.00;
+	bool clickHappening = false;
 };
